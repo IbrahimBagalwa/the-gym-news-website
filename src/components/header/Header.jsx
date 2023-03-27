@@ -1,7 +1,7 @@
 import logo from "../../assets/react.svg";
 const Header = () => {
   return (
-    <div className="text-white flex justify-between bg-[#00A5FF] p-2">
+    <div className="text-white flex justify-between from-[#0067B7]  to-[#00A5FF] bg-gradient-to-r p-2 sticky top-0 z-[60]">
       <div className="flex items-center gap-4">
         <img src={logo} alt="logo-news" /> <p>React News Project</p>
       </div>
