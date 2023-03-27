@@ -10,7 +10,7 @@ const GetAllShow = () => {
           </h2>
           <p className="text-[#d8dde2] text-sm">
             Discover DW's outstanding documentaries, exciting talk shows, news
-            and magazines.e
+            and magazines.
           </p>
           <p className="flex items-center justify-end text-white">
             <span className="hover:underline cursor-pointer font-bold">

@@ -1,7 +1,7 @@
 import testImage from "/images/testImage.jpg";
 const Card = () => {
   return (
-    <div className={`flex  text-white gap-2 px-10 z-50 hover-group`}>
+    <div className="flex text-white gap-2 px-10 z-50 hover-group">
       <img src={testImage} alt="test-image" className="cursor-pointer" />
       <div>
         <p className="hover:underline cursor-pointer">

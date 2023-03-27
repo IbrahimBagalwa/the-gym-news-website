@@ -1,6 +1,6 @@
 const HeroHeader = () => {
   return (
-    <div className="text-blue-400 mb-4">
+    <div className="text-[#002d5a] mb-4">
       <h1 className="text-5xl text-left">
         Xi ends trip to Russia as China grows more emboldened
       </h1>
