@@ -1,7 +1,10 @@
-import { Header } from "./components/header";
+import { Footer, Header } from "./components/header";
 import { Hero } from "./components/hero";
 import AllBlogCard from "./components/Blog/AllBlogCard";
-import { WrapperContainer, WrapperContent } from "./components/wrapper";
+import { WrapperContainer } from "./components/wrapper";
+import { AllBigBlogCard } from "./components/Blog";
+import { News } from "./components/news";
+import { GetAllShow, LatestShow } from "./components/latest-show";
 
 function App() {
   return (
@@ -9,9 +12,14 @@ function App() {
       <WrapperContainer>
         <Header />
         <Hero />
-        <WrapperContent className="bg-[#F1F3F5] mt-24">
+        <div className="bg-white">
+          <News />
+          <AllBigBlogCard />
           <AllBlogCard />
-        </WrapperContent>
+          <LatestShow />
+          <GetAllShow />
+          <Footer />
+        </div>
       </WrapperContainer>
     </div>
   );
