@@ -6,8 +6,8 @@ const defaultState = {
   error: "",
 };
 const APIKEY = "e29300599c8f4278833919cec88eefec";
-let uri = `https://newsapi.org/v2/everything?q=apple&sortBy=popularity&apiKey=${APIKEY}`;
-
+let uri = `https://newsapi.org/v2/everything?q=apple&from=2023-03-27&to=2023-03-27&sortBy=popularity&apiKey=${APIKEY}`;
+// "https://newsapi.org/v2/everything?q=apple&from=2023-03-27&to=2023-03-27&sortBy=popularity&apiKey=e29300599c8f4278833919cec88eefec";
 export const fetchArticles = createAsyncThunk("article/fetchArticles", () => {
   return fetch(uri)
     .then((res) => res.json())

@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import convertDateIntoHours from "../../utils/utils";
-import testImage from "/images/testImage.jpg";
 const Card = ({ title, urlToImage, url, publishedAt }) => {
   return (
     <div className="flex text-white gap-2 px-10 z-50 hover-group">
