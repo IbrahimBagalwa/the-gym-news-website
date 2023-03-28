@@ -12,7 +12,7 @@ const Header = () => {
         <li className="cursor-pointer">All news</li>
         <button className="bg-[#212529] rounded-full px-4 py-2 flex items-center gap-2">
           <i class="ri-focus-fill text-red-400"></i>
-          Live TV
+          <span className="text-white">Live TV</span>
         </button>
       </ul>
     </div>
