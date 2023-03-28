@@ -1,11 +1,18 @@
+import { useSelector } from "react-redux";
 import { WrapperContent } from "../wrapper";
 import CardContainer from "./CardContainer";
 
 const Hero = () => {
+  const { articles } = useSelector((state) => state.news);
+  const data = articles && articles.slice(0, 1).map((artImage) => artImage);
+
   return (
-    <div className="bg-[url('./images/hero.jpg')] bg-no-repeat relative bg-cover bg-center h-[60vh]">
+    <div
+      style={{ backgroundImage: `url(${data && data[0]?.urlToImage})` }}
+      className={`bg-no-repeat relative bg-cover bg-center h-[60vh]`}
+    >
       <WrapperContent>
-        <CardContainer />
+        {data && <CardContainer heroData={data[0]} />}
       </WrapperContent>
     </div>
   );
