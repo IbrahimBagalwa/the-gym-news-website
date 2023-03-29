@@ -3,11 +3,12 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 const defaultState = {
   loading: true,
   articles: [],
+  newsArticlesFiltered: [],
   error: "",
 };
 const APIKEY = "e29300599c8f4278833919cec88eefec";
-let uri = `https://newsapi.org/v2/everything?q=apple&from=2023-03-27&to=2023-03-27&sortBy=popularity&apiKey=${APIKEY}`;
-// "https://newsapi.org/v2/everything?q=apple&from=2023-03-27&to=2023-03-27&sortBy=popularity&apiKey=e29300599c8f4278833919cec88eefec";
+let uri = `https://newsapi.org/v2/everything?q=keyword&apiKey=${APIKEY}`;
+// "https://newsapi.org/v2/everything?q=keyword&apiKey=e29300599c8f4278833919cec88eefec";
 export const fetchArticles = createAsyncThunk("article/fetchArticles", () => {
   return fetch(uri)
     .then((res) => res.json())
@@ -17,6 +18,15 @@ export const fetchArticles = createAsyncThunk("article/fetchArticles", () => {
 export const articlesSlices = createSlice({
   name: "news",
   initialState: defaultState,
+  reducers: {
+    filterArticleNews: (state, action) => {
+      const newsArticles = [...state.articles];
+      const newFilterArticleNews = newsArticles.filter((article) =>
+        article.title.toLowerCase().includes(action.payload)
+      );
+      state.newsArticlesFiltered = newFilterArticleNews;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchArticles.pending, (state) => {
       state.loading = true;
@@ -24,6 +34,7 @@ export const articlesSlices = createSlice({
     builder.addCase(fetchArticles.fulfilled, (state, action) => {
       state.loading = false;
       state.articles = action.payload;
+      state.newsArticlesFiltered = state.articles;
       state.error = "";
     });
     builder.addCase(fetchArticles.rejected, (state, action) => {
@@ -33,5 +44,5 @@ export const articlesSlices = createSlice({
     });
   },
 });
-
+export const { filterArticleNews } = articlesSlices.actions;
 export default articlesSlices.reducer;

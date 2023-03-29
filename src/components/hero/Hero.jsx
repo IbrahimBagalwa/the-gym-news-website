@@ -3,8 +3,10 @@ import { WrapperContent } from "../wrapper";
 import CardContainer from "./CardContainer";
 
 const Hero = () => {
-  const { articles } = useSelector((state) => state.news);
-  const data = articles && articles.slice(0, 1).map((artImage) => artImage);
+  const { newsArticlesFiltered } = useSelector((state) => state.news);
+  const data =
+    newsArticlesFiltered &&
+    newsArticlesFiltered.slice(0, 1).map((artImage) => artImage);
 
   return (
     <div

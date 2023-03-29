@@ -6,7 +6,11 @@ const BigBlogCard = ({ title, urlToImage, url, publishedAt, content }) => {
     <div className="flex flex-col gap-y-4">
       <h1 className="uppercase text-[#3b444d]">Africa</h1>
       <Link to={url} className="hover:group hover:underline cursor-pointer">
-        <img src={urlToImage} alt="big-image" className="h-[307px]" />
+        <img
+          src={urlToImage ?? bigImage}
+          alt="big-image"
+          className="h-[307px]"
+        />
         <h2 className="text-[#002D5A] hover:underline text-4xl cursor-pointer mb-4 h-[20px] mb-20">
           {title}
         </h2>
