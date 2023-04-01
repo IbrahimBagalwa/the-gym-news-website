@@ -10,7 +10,7 @@ export const BlogCard = ({ title, urlToImage, url, publishedAt, content }) => {
         <img src={urlToImage} alt="newsimage" className="w-[355px] h-[186px]" />
         <h2 className="text-2xl font-bold">{title}</h2>
       </Link>
-      <p>{content}</p>
+      <p>{content || "No content for now"}</p>
       <div className="flex gap-x-2 divide-x-2">
         <span>Natural</span>
         <span className="pl-2">{convertDateIntoHours(publishedAt)}</span>
