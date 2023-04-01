@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const NewsItem = ({ category, country, language, name, url }) => {
+const NewsItem = ({ category, country, language, name }) => {
   return (
     <div className="">
       <span className="text-[#5c666e] text-xs">

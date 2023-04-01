@@ -1,17 +1,10 @@
-import { Footer, Header } from "./components/header";
-import { Hero } from "./components/hero";
-import AllBlogCard from "./components/Blog/AllBlogCard";
+import { Header } from "./components/header";
 import { WrapperContainer } from "./components/wrapper";
-import { AllBigBlogCard } from "./components/Blog";
-import { News } from "./components/news";
-import { GetAllShow, LatestShow } from "./components/latest-show";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { fetchArticles, filterArticleNews } from "./redux/slices/articles";
-import { Routes } from "react-router-dom";
-import { Router } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import { Route } from "react-router-dom";
 import Publisher from "./components/publishers/Publisher";
 
 function App() {

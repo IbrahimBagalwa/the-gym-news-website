@@ -1,15 +1,12 @@
-import { useRef } from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchSources } from "../../redux/slices/articles";
+import { fetchSources } from "../../redux/slices/publisher";
 import { WrapperContent } from "../wrapper";
 import NewsItem from "./NewsItem";
-import { Link } from "react-router-dom";
 
 const News = () => {
   const dispatch = useDispatch();
-  const { sourcesArticle } = useSelector((state) => state.news);
+  const { sourcesArticle } = useSelector((state) => state.publishers);
   const [showPublishers, setShowPublishers] = useState(
     sourcesArticle.slice(0, 9)
   );
@@ -27,6 +24,7 @@ const News = () => {
       refContainer.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
   return (
     <div className="pt-32" ref={refContainer}>
       <h1 className="mx-auto max-w-[1140px] text-[#3b444d] text-2xl font-bold mb-6 capitalize">
