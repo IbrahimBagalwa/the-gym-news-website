@@ -6,9 +6,10 @@ import NewsItem from "./NewsItem";
 
 const News = () => {
   const dispatch = useDispatch();
-  const { sourcesArticle } = useSelector((state) => state.publishers);
+  const { sourcesArticle } = useSelector((state) => state.publushers);
+
   const [showPublishers, setShowPublishers] = useState(
-    sourcesArticle.slice(0, 9)
+    sourcesArticle.slice(0, 12)
   );
   const refContainer = useRef(null);
 
@@ -17,10 +18,10 @@ const News = () => {
   }, [dispatch]);
 
   const displayAllPulisher = () => {
-    if (showPublishers.length < 10) {
-      setShowPublishers(sourcesArticle.slice(10, 90));
+    if (showPublishers.length < 13) {
+      setShowPublishers(sourcesArticle.slice(13, 93));
     } else {
-      setShowPublishers(sourcesArticle.slice(0, 9));
+      setShowPublishers(sourcesArticle.slice(0, 12));
       refContainer.current.scrollIntoView({ behavior: "smooth" });
     }
   };
@@ -31,7 +32,7 @@ const News = () => {
         News publishers
       </h1>
 
-      <WrapperContent styles="grid grid-cols-3 gap-8 mb-8 items-center w-full">
+      <WrapperContent styles="grid grid-cols-4 gap-4 mb-8 items-center w-full">
         {showPublishers.map((article) => {
           return <NewsItem key={article.id} {...article} />;
         })}
@@ -40,8 +41,14 @@ const News = () => {
         className="flex items-center justify-center bg-[#D8DDE2] text-[#002D5A] hover:ring-1 ring-[#002D5A] mx-auto mb-4 px-8 py-4"
         onClick={displayAllPulisher}
       >
-        <span>{showPublishers.length > 10 ? "Show more" : "Show less"}</span>
-        <i className="ri-arrow-down-s-line ri-xl"></i>
+        <span className="flex items-center">
+          {showPublishers.length < 13 ? "Show more" : "Show less"}
+          {showPublishers.length < 13 ? (
+            <i className="ri-arrow-down-s-line ri-xl"></i>
+          ) : (
+            <i className="ri-arrow-up-s-line ri-xl"></i>
+          )}
+        </span>
       </button>
     </div>
   );

@@ -9,9 +9,9 @@ const BigBlogCard = ({ title, urlToImage, url, publishedAt, content }) => {
         <img
           src={urlToImage ?? bigImage}
           alt="big-image"
-          className="h-[307px]"
+          className="h-[307px] w-[545px]"
         />
-        <h2 className="text-[#002D5A] hover:underline text-4xl cursor-pointer mb-4 h-[20px] mb-20">
+        <h2 className="text-[#002D5A] hover:underline text-4xl cursor-pointer mb-4 h-[105px] mb-20">
           {title}
         </h2>
       </Link>

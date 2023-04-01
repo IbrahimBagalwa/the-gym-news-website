@@ -1,4 +1,3 @@
-import { useSelector } from "react-redux";
 import { WrapperContent } from "../wrapper";
 
 const GetAllShow = () => {

@@ -8,7 +8,7 @@ const defaultState = {
 
 export const fetchSources = createAsyncThunk("sources/fetchSources", () => {
   return fetch(
-    "https://newsapi.org/v2/top-headlines/sources?q=keyword&apiKey=e29300599c8f4278833919cec88eefec"
+    "https://news-proxy.netlify.app/api/top-headlines/sources?q=keyword&apiKey=e29300599c8f4278833919cec88eefec"
   )
     .then((res) => res.json())
     .then((data) => data.sources);

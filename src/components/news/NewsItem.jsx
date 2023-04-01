@@ -7,7 +7,7 @@ const NewsItem = ({ category, country, language, name }) => {
         {category} {language} {country}
       </span>
       <h2 className="text-[#002d5a] text-xl hover:underline">
-        <Link to="/publisher-news">{name}</Link>
+        <Link to={`/publisher-news/${name}`}>{name}</Link>
       </h2>
     </div>
   );

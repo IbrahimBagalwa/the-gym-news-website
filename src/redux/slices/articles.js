@@ -7,8 +7,7 @@ const defaultState = {
   error: "",
 };
 const APIKEY = "e29300599c8f4278833919cec88eefec";
-let uri = `https://newsapi.org/v2/everything?q=keyword&apiKey=${APIKEY}`;
-
+let uri = `https://news-proxy.netlify.app/api/top-headlines?country=us&apiKey=${APIKEY}`;
 export const fetchArticles = createAsyncThunk("article/fetchArticles", () => {
   return fetch(uri)
     .then((res) => res.json())

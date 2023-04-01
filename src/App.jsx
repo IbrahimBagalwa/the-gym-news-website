@@ -26,7 +26,7 @@ function App() {
             element={<Header onChangeHandler={onChangeHandler} />}
           >
             <Route index element={<Home />} />
-            <Route path="publisher-news" element={<Publisher />} />
+            <Route path="publisher-news/:publisherID" element={<Publisher />} />
           </Route>
         </Routes>
       </WrapperContainer>
