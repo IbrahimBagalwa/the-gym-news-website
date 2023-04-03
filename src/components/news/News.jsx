@@ -7,15 +7,15 @@ import NewsItem from "./NewsItem";
 const News = () => {
   const dispatch = useDispatch();
   const { sourcesArticle } = useSelector((state) => state.publushers);
-
-  const [showPublishers, setShowPublishers] = useState(
-    sourcesArticle.slice(0, 12)
-  );
+  const [showPublishers, setShowPublishers] = useState([]);
   const refContainer = useRef(null);
-
   useEffect(() => {
     dispatch(fetchSources());
-  }, [dispatch]);
+  }, []);
+
+  useEffect(() => {
+    setShowPublishers(sourcesArticle.slice(0, 12));
+  }, [sourcesArticle]);
 
   const displayAllPulisher = () => {
     if (showPublishers.length < 13) {
@@ -31,7 +31,6 @@ const News = () => {
       <h1 className="mx-auto max-w-[1140px] text-[#3b444d] text-2xl font-bold mb-6 capitalize">
         News publishers
       </h1>
-
       <WrapperContent styles="grid grid-cols-4 gap-4 mb-8 items-center w-full">
         {showPublishers.map((article) => {
           return <NewsItem key={article.id} {...article} />;
