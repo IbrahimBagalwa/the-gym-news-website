@@ -31,7 +31,7 @@ const News = () => {
       <h1 className="mx-auto max-w-[1140px] text-[#3b444d] text-2xl font-bold mb-6 capitalize">
         News publishers
       </h1>
-      <WrapperContent styles="grid grid-cols-4 gap-4 mb-8 items-center w-full">
+      <WrapperContent styles="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 mb-8 items-center w-full">
         {showPublishers.map((article) => {
           return <NewsItem key={article.id} {...article} />;
         })}

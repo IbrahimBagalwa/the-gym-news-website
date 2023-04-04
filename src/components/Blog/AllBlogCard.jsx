@@ -7,7 +7,7 @@ const AllBlogCard = () => {
   const { newsArticlesFiltered } = useSelector((state) => state.news);
   return (
     <div className="bg-[#F1F3F5] pt-10 pb-8">
-      <WrapperContent styles="grid grid-cols-3 gap-8">
+      <WrapperContent styles="grid grid-cols-3 md:grid-cols-2- gap-8 md:gap-2">
         {newsArticlesFiltered &&
           newsArticlesFiltered?.slice(7, 10).map((article, index) => {
             return <BlogCard {...article} key={index} />;
