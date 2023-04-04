@@ -11,7 +11,7 @@ const Hero = () => {
   return (
     <div
       style={{ backgroundImage: `url(${data && data[0]?.urlToImage})` }}
-      className={`bg-no-repeat relative bg-cover bg-center h-[60vh]`}
+      className="bg-no-repeat relative bg-cover bg-center h-[60vh] lg:block hidden"
     >
       <WrapperContent>
         {data && <CardContainer heroData={data[0]} />}
