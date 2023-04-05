@@ -1,8 +1,12 @@
 import { useSelector } from "react-redux";
 import { WrapperContent } from "../wrapper";
 import CardContainer from "./CardContainer";
+import { useOutletContext } from "react-router-dom";
+import LiveScreen from "./LiveScreen";
 
 const Hero = () => {
+  const live = useOutletContext();
+  console.log(live);
   const { newsArticlesFiltered } = useSelector((state) => state.news);
   const data =
     newsArticlesFiltered &&
@@ -14,7 +18,7 @@ const Hero = () => {
       className="bg-no-repeat relative bg-cover bg-center h-[60vh] lg:block hidden"
     >
       <WrapperContent>
-        {data && <CardContainer heroData={data[0]} />}
+        {live ? <LiveScreen /> : data && <CardContainer heroData={data[0]} />}
       </WrapperContent>
     </div>
   );
