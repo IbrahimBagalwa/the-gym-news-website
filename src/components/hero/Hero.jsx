@@ -6,7 +6,6 @@ import LiveScreen from "./LiveScreen";
 
 const Hero = () => {
   const live = useOutletContext();
-  console.log(live);
   const { newsArticlesFiltered } = useSelector((state) => state.news);
   const data =
     newsArticlesFiltered &&

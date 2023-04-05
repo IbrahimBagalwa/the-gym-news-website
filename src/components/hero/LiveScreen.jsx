@@ -1,5 +1,3 @@
-import React from "react";
-
 const LiveScreen = () => {
   return (
     <div className="overflow-hidden pb-[56.25%] relative h-0">

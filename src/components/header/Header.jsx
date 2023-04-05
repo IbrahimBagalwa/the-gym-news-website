@@ -1,10 +1,8 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import logo from "../../assets/react.svg";
 import SearchInput from "./SearchInput";
-import { Outlet } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Outlet, Link } from "react-router-dom";
 import Footer from "./Footer";
-import { useState } from "react";
 const Header = ({ onChangeHandler }) => {
   const [live, setLive] = useState(false);
   return (

@@ -12,9 +12,7 @@ const Publisher = () => {
   const filterArticleByPublisher = articles.filter(
     (article) => article.source.name === publisherID
   );
-  console.log(
-    articles.filter((article) => article.source.name === publisherID)
-  );
+
   useEffect(() => {
     dispatch(fetchArticles());
   }, []);
