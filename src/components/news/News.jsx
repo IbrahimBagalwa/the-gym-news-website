@@ -27,7 +27,7 @@ const News = () => {
   };
 
   return (
-    <div className="pt-32" ref={refContainer}>
+    <div className="pt-32 px-10" ref={refContainer}>
       <h1 className="mx-auto max-w-[1140px] text-[#3b444d] text-2xl font-bold mb-6 capitalize">
         News publishers
       </h1>

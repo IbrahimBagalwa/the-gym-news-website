@@ -11,12 +11,12 @@ const BigBlogCard = ({ title, urlToImage, url, publishedAt, content }) => {
           alt="big-image"
           className="h-[307px] w-[545px]"
         />
-        <h2 className="text-[#002D5A] hover:underline lg:text-4xl cursor-pointer mb-4 lg:h-[105px] mb-20">
+        <h2 className="text-[#002D5A] hover:underline lg:text-4xl cursor-pointer lg:h-[105px] md:mb-20">
           {title}
         </h2>
       </Link>
       <div>
-        <p className="text-[#3b444d] text-sm mb-2 mt-4 lg:block md:hidden">
+        <p className="text-[#3b444d] text-sm mb-2 md:mt-4 mt-2 px-2 lg:block md:hidden">
           {content}
         </p>
         <div className="flex gap-x-2 divide-x-2 text-xs text-[#5c666e]">

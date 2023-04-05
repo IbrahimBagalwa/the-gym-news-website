@@ -3,14 +3,20 @@ import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <div className="bg-[#3b444d] p-20">
-      <WrapperContent styles="flex justify-between">
-        <div className="text-[11px] flex">
-          <p className="text-[#b2bcc5] mx-6 hover:underline">
+      <WrapperContent styles="flex md:justify-between justify-center">
+        <div className="text-[11px] flex items-center">
+          <p className="text-[#b2bcc5] mx-6 hover:underline truncate">
             © 2023 Ibrahim Bagalwa
           </p>
-          <p className="text-white mx-2 hover:underline">Privacy Policy</p>
-          <p className="text-white mx-2 hover:underline">Legal notice</p>
-          <p className="text-white hover:underline">Digital accessibility</p>
+          <p className="text-white mx-2 hover:underline hidden md:block">
+            Privacy Policy
+          </p>
+          <p className="text-white mx-2 hover:underline hidden md:block">
+            Legal notice
+          </p>
+          <p className="text-white hover:underline hidden md:block">
+            Digital accessibility
+          </p>
         </div>
         <div className="text-white">
           <Link to="https://twitter.com/ibrahim_Bagalwa">
