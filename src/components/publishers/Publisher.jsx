@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { WrapperContent } from "../wrapper";
 import { BigBlogCard } from "../ui";
 import YoutubeMagic from "./SketonPublication";
+import EmptyBox from "../ui/EmptyBox";
 
 const Publisher = () => {
   const { publisherID } = useParams();
@@ -24,6 +25,8 @@ const Publisher = () => {
       <WrapperContent styles="grid grid-cols-3 items-center justify-center gap-8">
         {loading ? (
           <YoutubeMagic />
+        ) : filterArticleByPublisher?.length === 0 ? (
+          <EmptyBox />
         ) : (
           filterArticleByPublisher?.map((article, index) => {
             return <BigBlogCard {...article} key={index} />;
