@@ -1,29 +1,34 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchArticles } from "../../redux/slices/articles";
 import { WrapperContent } from "../wrapper";
 import { BigBlogCard } from "../ui";
+import YoutubeMagic from "./SketonPublication";
 
 const Publisher = () => {
   const { publisherID } = useParams();
-  const dispatch = useDispatch();
-  const { articles } = useSelector((state) => state.news);
-  const filterArticleByPublisher = articles.filter(
-    (article) => article.source.name === publisherID
-  );
-
+  const [filterArticleByPublisher, setFilterByPublisher] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const fetchSingle = async () => {
+    const res = await fetch(
+      `https://news-proxy.netlify.app/api/everything?sources=${publisherID}&apiKey=e29300599c8f4278833919cec88eefec`
+    );
+    const data = await res.json();
+    setFilterByPublisher(data.articles);
+    setLoading(false);
+  };
   useEffect(() => {
-    dispatch(fetchArticles());
-  }, []);
+    fetchSingle();
+  }, [publisherID]);
   return (
     <div className="bg-[#F1F3F5] pt-10 pb-8">
-      <WrapperContent styles="grid grid-cols-2 items-center justify-center gap-8">
-        {filterArticleByPublisher.length === 0
-          ? "no item"
-          : filterArticleByPublisher?.map((article, index) => {
-              return <BigBlogCard {...article} key={index} />;
-            })}
+      <WrapperContent styles="grid grid-cols-3 items-center justify-center gap-8">
+        {loading ? (
+          <YoutubeMagic />
+        ) : (
+          filterArticleByPublisher?.map((article, index) => {
+            return <BigBlogCard {...article} key={index} />;
+          })
+        )}
       </WrapperContent>
     </div>
   );

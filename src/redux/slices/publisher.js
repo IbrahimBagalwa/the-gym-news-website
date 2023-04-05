@@ -5,7 +5,6 @@ const defaultState = {
   sourcesArticle: [],
   error: "",
 };
-
 export const fetchSources = createAsyncThunk("sources/fetchSources", () => {
   return fetch(
     "https://news-proxy.netlify.app/api/top-headlines/sources?q=keyword&apiKey=e29300599c8f4278833919cec88eefec"
