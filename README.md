@@ -35,7 +35,7 @@ Technological Requirements:
 
 ### Screenshot
 
-![the-gym-news-website - desktop-page]()
+![the-gym-news-website - desktop-page](./src/assets/news-app.PNG)
 
 ### Links
 
