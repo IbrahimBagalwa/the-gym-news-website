@@ -1,16 +1,20 @@
 import { useSelector } from "react-redux";
 import convertDateIntoHours from "../../utils/utils";
 import { WrapperContent } from "../wrapper";
+import Skeleton from "react-loading-skeleton";
 
 const LatestShow = () => {
-  const { newsArticlesFiltered } = useSelector((state) => state.news);
+  const { newsArticlesFiltered, loading } = useSelector((state) => state.news);
   return (
     <div className="bg-[#323C45] pt-8 pb-6">
       <h1 className="mx-auto max-w-[1140px] text-[#d8dde2] text-3xl uppercase font-bold mb-6 lg:px-0 px-2">
         Lastest Show
       </h1>
       <WrapperContent styles="grid- grid-cols-2-">
-        {newsArticlesFiltered &&
+        {loading ? (
+          <Skeleton />
+        ) : (
+          newsArticlesFiltered &&
           newsArticlesFiltered.slice(10, 11).map((article, index) => {
             return (
               <div key={index} className="grid lg:grid-cols-3">
@@ -36,7 +40,8 @@ const LatestShow = () => {
                 </div>
               </div>
             );
-          })}
+          })
+        )}
       </WrapperContent>
     </div>
   );

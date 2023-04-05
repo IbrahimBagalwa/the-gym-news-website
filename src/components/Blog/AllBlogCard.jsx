@@ -2,9 +2,10 @@ import { useSelector } from "react-redux";
 import { BlogCard } from "../ui";
 import { WrapperContent } from "../wrapper";
 import { useEffect, useState } from "react";
+import Skeleton from "react-loading-skeleton";
 
 const AllBlogCard = () => {
-  const { newsArticlesFiltered } = useSelector((state) => state.news);
+  const { newsArticlesFiltered, loading } = useSelector((state) => state.news);
   const [sizeScreen, setSizeScreen] = useState(window.innerWidth);
   const [value, setValue] = useState(10);
 
@@ -19,10 +20,16 @@ const AllBlogCard = () => {
   return (
     <div className="bg-[#F1F3F5] pt-10 px-10 lg:px-0 md:px-20 pb-8">
       <WrapperContent styles="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
-        {newsArticlesFiltered &&
-          newsArticlesFiltered?.slice(7, value).map((article, index) => {
-            return <BlogCard {...article} key={index} />;
-          })}
+        {loading
+          ? Array(3)
+              .fill()
+              .map((_, id) => {
+                return <Skeleton key={id} />;
+              })
+          : newsArticlesFiltered &&
+            newsArticlesFiltered?.slice(7, value).map((article, index) => {
+              return <BlogCard {...article} key={index} />;
+            })}
       </WrapperContent>
     </div>
   );

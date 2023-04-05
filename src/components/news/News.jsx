@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchSources } from "../../redux/slices/publisher";
 import { WrapperContent } from "../wrapper";
 import NewsItem from "./NewsItem";
+import SkeletonNews from "./SkeletonNews";
 
 const News = () => {
   const dispatch = useDispatch();
-  const { sourcesArticle } = useSelector((state) => state.publushers);
+  const { sourcesArticle, loading } = useSelector((state) => state.publushers);
   const [showPublishers, setShowPublishers] = useState([]);
   const refContainer = useRef(null);
   useEffect(() => {
@@ -32,9 +33,13 @@ const News = () => {
         News publishers
       </h1>
       <WrapperContent styles="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 mb-8 items-center w-full">
-        {showPublishers.map((article) => {
-          return <NewsItem key={article.id} {...article} />;
-        })}
+        {loading ? (
+          <SkeletonNews />
+        ) : (
+          showPublishers.map((article) => {
+            return <NewsItem key={article.id} {...article} />;
+          })
+        )}
       </WrapperContent>
       <button
         className="flex items-center justify-center bg-[#D8DDE2] text-[#002D5A] hover:ring-1 ring-[#002D5A] mx-auto mb-4 px-8 py-4"
