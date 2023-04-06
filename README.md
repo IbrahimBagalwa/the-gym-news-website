@@ -39,7 +39,7 @@ Technological Requirements:
 
 ### Links
 
-- Live Site URL Open [Challenge]() with your browser to see the result.
+- Live Site URL Open [Challenge](https://deploy-preview-1--storied-pasca-023e4e.netlify.app/) with your browser to see the result.
 
 ## My process
 
