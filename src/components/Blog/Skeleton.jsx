@@ -1,7 +1,4 @@
-import React from "react";
 import ContentLoader from "react-content-loader";
-// import Skeleton from "react-loading-skeleton";
-
 const Skeleton = () => {
   return (
     <ContentLoader

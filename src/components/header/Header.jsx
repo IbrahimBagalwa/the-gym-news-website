@@ -12,15 +12,7 @@ const Header = ({ onChangeHandler }) => {
           <img src={logo} alt="logo-news" /> <p>React News Project</p>
         </Link>
         <SearchInput onChangeHandler={onChangeHandler} />
-        <ul className="lg:flex hidden items-center justify-center gap-8 text-xl">
-          <Link to="/latest-news">
-            <li className="cursor-pointer flex items-center justify-center">
-              Lastest news
-            </li>
-          </Link>
-          <Link to="/all-news">
-            <li className="cursor-pointer">All news</li>
-          </Link>
+        <div className="lg:flex hidden items-center justify-center gap-8 text-xl">
           <button
             className="bg-[#212529] md:hidden rounded-full px-4 py-2 lg:flex items-center gap-2"
             onClick={() => setLive(!live)}
@@ -28,7 +20,7 @@ const Header = ({ onChangeHandler }) => {
             <i class="ri-focus-fill text-red-400"></i>
             <span className="text-white">Live TV</span>
           </button>
-        </ul>
+        </div>
       </div>
       <Outlet context={live} />
       <Footer />

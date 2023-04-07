@@ -11,9 +11,7 @@ const AllBigBlogCard = () => {
         {loading
           ? Array(4)
               .fill()
-              .map((_, i) => {
-                return <Skeleton key={i} />;
-              })
+              .map((_, i) => <Skeleton key={i} />)
           : newsArticlesFiltered &&
             newsArticlesFiltered?.slice(3, 7).map((article, index) => {
               return <BigBlogCard {...article} key={index} />;
