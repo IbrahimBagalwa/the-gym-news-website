@@ -1,19 +1,20 @@
 # the-gym-news-website
 
-This is a [React.js](https://reactjs.org/) project bootstrapped with vite [`npm create vite@latest todo-context -- --template react`](https://vitejs.dev/guide/).
+This is a [React.js](https://reactjs.org/) project bootstrapped with vite [`npm create vite@latest the-gym-news-website -- --template react`](https://vitejs.dev/guide/).
 
 # the-gym-news-website
 
 ## Welcome! 👋
 
-This is a solution to the Gym Traning. The Gym challenge help us to improve our coding skills by building realistic projects.Once you have completed the course above, go through these exercises
-For each of thIS project, create a GitHub repo for it, use react.
+This is a solution to the Gym Traning. The Gym challenge help us to improve our coding skills by building realistic projects.
+Once you have completed the course above, go through these exercises
+For each of thiS project, create a GitHub repo for it, use react.
 In this exercise, we will use reactjs,redux, tailwind.
-These exercises will help you apply the basic concepts of React through tiny projects. Once you finish this exercise, you'll know you've got the basics down. Then you can start learning more advanced concepts, and build more complicated projects
+These exercises will help you apply the basic concepts of React through tiny projects.
 
 ## Content
 
-- [the-gym-calculator-react](#the-gym-news-website-react)
+- [the-gym-news-website-react](#the-gym-news-website-react)
 - [Welcome! 👋](#welcome)
 - [The Exercise](#the-challenge)
 - [Screenshot](#screenshot)
