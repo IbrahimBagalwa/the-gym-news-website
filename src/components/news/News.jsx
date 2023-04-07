@@ -7,7 +7,7 @@ import SkeletonNews from "./SkeletonNews";
 
 const News = () => {
   const dispatch = useDispatch();
-  const { sourcesArticle, loading } = useSelector((state) => state.publushers);
+  const { sourcesArticle, loading } = useSelector((state) => state.publishers);
   const [showPublishers, setShowPublishers] = useState([]);
   const refContainer = useRef(null);
   useEffect(() => {

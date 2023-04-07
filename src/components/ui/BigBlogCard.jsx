@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import convertDateIntoHours from "../../utils/utils";
-import bigImage from "/images/bi-im.jpg";
 const BigBlogCard = ({ title, urlToImage, url, publishedAt, content }) => {
   return (
     <div className="flex flex-col justify-center items-center gap-y-4 md:px-20 lg:px-0">
       <h1 className="uppercase text-[#3b444d]">Africa</h1>
       <Link to={url} className="hover:group hover:underline cursor-pointer">
         <img
-          src={urlToImage ?? bigImage}
+          src={urlToImage}
           alt="big-image"
           className="lg:h-[307px] lg:w-[545px] md:w-full md:h-full"
         />

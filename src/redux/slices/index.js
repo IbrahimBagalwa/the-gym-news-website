@@ -3,6 +3,6 @@ import publisherReducer from "./publisher";
 
 const slicesReducer = {
   news: articleReducer,
-  publushers: publisherReducer,
+  publishers: publisherReducer,
 };
 export default slicesReducer;
