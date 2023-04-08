@@ -9,10 +9,12 @@ import Publisher from "./components/publishers/Publisher";
 
 function App() {
   const dispatch = useDispatch();
+
   const onChangeHandler = (e) => {
     const searchField = e.target.value.toLowerCase();
     dispatch(filterArticleNews(searchField));
   };
+
   useEffect(() => {
     dispatch(fetchArticles());
   }, []);

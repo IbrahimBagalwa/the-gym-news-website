@@ -14,9 +14,11 @@ const AllBlogCard = () => {
     window.addEventListener("resize", handleResize);
     return () => removeEventListener("resize", handleResize);
   }, []);
+
   useEffect(() => {
     setValue(sizeScreen <= 1123 ? 13 : 10);
   }, [sizeScreen]);
+
   return (
     <div className="bg-[#F1F3F5] pt-10 px-10 lg:px-0 md:px-20 pb-8">
       <WrapperContent styles="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
