@@ -12,5 +12,4 @@ const NewsItem = ({ category, country, language, name, id }) => {
     </div>
   );
 };
-
 export default NewsItem;
