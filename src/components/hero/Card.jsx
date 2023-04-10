@@ -13,7 +13,7 @@ const Card = ({ title, urlToImage, url, publishedAt }) => {
           {title}
         </Link>
         <p className="text-gray-400 text-xs">
-          <span>Published At </span>
+          <span>Published At :</span>
           <span>{convertDateIntoHours(publishedAt)} ago</span>
         </p>
       </div>
