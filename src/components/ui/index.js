@@ -1,2 +1,3 @@
 import { BlogCard } from "./BlogCard";
-export { BlogCard };
+import BigBlogCard from "./BigBlogCard";
+export { BlogCard, BigBlogCard };

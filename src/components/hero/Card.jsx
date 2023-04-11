@@ -1,17 +1,20 @@
-import testImage from "/images/testImage.jpg";
-const Card = () => {
+import { Link } from "react-router-dom";
+import convertDateIntoHours from "../../utils/utils";
+const Card = ({ title, urlToImage, url, publishedAt }) => {
   return (
-    <div className="flex text-white gap-2 w-[500px]">
-      <img src={testImage} alt="test-image" />
+    <div className="flex text-white gap-2 px-10 z-50 hover-group">
+      <img
+        src={urlToImage}
+        alt="test-image"
+        className="cursor-pointer w-[201px] h-[113px]"
+      />
       <div>
-        <p>
-          Green MEP Bütikofer: Xi visit to Moscow indicates desire for new world
-          order
-        </p>
-        <p>
-          <span>Category</span>
-          <span>16 Hours ago</span>
-          <span> 02:40 min</span>
+        <Link to={url} className="hover:underline cursor-pointer">
+          {title}
+        </Link>
+        <p className="text-gray-400 text-xs">
+          <span>Published At :</span>
+          <span>{convertDateIntoHours(publishedAt)} ago</span>
         </p>
       </div>
     </div>

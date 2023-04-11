@@ -1,12 +1,18 @@
-const HeroHeader = () => {
+import { Link } from "react-router-dom";
+import convertDateIntoHours from "../../utils/utils";
+
+const HeroHeader = ({ heroData }) => {
+  let date = heroData?.publishedAt;
   return (
-    <div className="text-blue-400 mb-4">
+    <div className="text-white mb-4">
       <h1 className="text-5xl text-left">
-        Xi ends trip to Russia as China grows more emboldened
+        <Link to={heroData && heroData?.url} className="hover:underline">
+          {heroData && heroData?.title}
+        </Link>
       </h1>
       <div className="flex items-center justify-start gap-4 capitalize">
-        <p>category</p>
-        <p>4 hours ago</p>
+        <p>published At :</p>
+        <p>{convertDateIntoHours(date)}</p>
       </div>
     </div>
   );
