@@ -1,6 +1,18 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const defaultState = {
+export type ArticleData = {
+  title: string;
+  urlToImage: string;
+  url: string;
+  publishedAt: Date;
+  content: string;
+};
+export type PublisherState = {
+  readonly loading: boolean;
+  readonly sourcesArticle: ArticleData[];
+  readonly error?: string;
+};
+const defaultState: PublisherState = {
   loading: true,
   sourcesArticle: [],
   error: "",
@@ -12,9 +24,11 @@ export const fetchSources = createAsyncThunk("sources/fetchSources", () => {
     .then((res) => res.json())
     .then((data) => data.sources);
 });
+
 export const publisherSlices = createSlice({
   name: "publushers",
   initialState: defaultState,
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchSources.pending, (state) => {
       state.loading = true;
