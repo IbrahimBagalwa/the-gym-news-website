@@ -1,17 +1,17 @@
 import { Header } from "./components/header";
 import { WrapperContainer } from "./components/wrapper";
-import { useEffect } from "react";
+import { useEffect, ChangeEvent } from "react";
 import { useDispatch } from "react-redux";
 import { fetchArticles, filterArticleNews } from "./redux/slices/articles";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Publisher from "./components/publishers/Publisher";
 
-function App() {
+const App = () => {
   const dispatch = useDispatch();
 
-  const onChangeHandler = (e) => {
-    const searchField = e.target.value.toLowerCase();
+  const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    const searchField = event.target.value.toLowerCase();
     dispatch(filterArticleNews(searchField));
   };
 
@@ -34,6 +34,6 @@ function App() {
       </WrapperContainer>
     </div>
   );
-}
+};
 
 export default App;

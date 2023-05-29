@@ -1,4 +1,7 @@
-const SearchInput = ({ onChangeHandler }) => {
+import { HandleChangeProp } from "./Header";
+import { FC } from "react";
+
+const SearchInput: FC<HandleChangeProp> = ({ onChangeHandler }) => {
   return (
     <form>
       <div className="relative">
