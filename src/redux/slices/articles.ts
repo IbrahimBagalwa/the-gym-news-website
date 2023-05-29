@@ -1,6 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
-const defaultState = {
+import { ArticleData } from "./publisher";
+export type ArticleState = {
+  loading?: boolean;
+  articles: ArticleData[];
+  newsArticlesFiltered: ArticleData[];
+  error?: string;
+};
+const defaultState: ArticleState = {
   loading: true,
   articles: [],
   newsArticlesFiltered: [],
